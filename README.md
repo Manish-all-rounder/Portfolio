@@ -1,4 +1,22 @@
-# React + TypeScript + Vite
+# Portfolio
+
+Personal portfolio site (React + TypeScript + Vite).
+
+## GitHub Pages
+
+The site is configured for a **project site** at:
+
+`https://manish-all-rounder.github.io/Portfolio/`
+
+1. Push this repo to [`Manish-all-rounder/Portfolio`](https://github.com/Manish-all-rounder/Portfolio) on the `main` branch (or `master` — the workflow supports both).
+2. In the repo on GitHub: **Settings → Pages → Build and deployment → Source** → choose **GitHub Actions** (not “Deploy from a branch”).
+3. Open the **Actions** tab and confirm the “Deploy to GitHub Pages” workflow succeeds. The live URL appears in the workflow summary and on the Pages settings page.
+
+If you rename the repository, update the `base` path in `vite.config.ts` (it must match the repo name: `/YourRepoName/`).
+
+---
+
+# React + TypeScript + Vite (template notes)
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 

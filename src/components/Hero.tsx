@@ -40,7 +40,7 @@ export function Hero() {
             <button type="button" className="btn btn-outline" onClick={() => scrollTo('contact')}>
               Get in Touch
             </button>
-            <a href="/AtharvaPBI.pdf" download className="btn btn-outline">
+            <a href={`${import.meta.env.BASE_URL}AtharvaPBI.pdf`} download className="btn btn-outline">
               Download Resume
             </a>
           </div>
