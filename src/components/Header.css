@@ -21,7 +21,7 @@
   -webkit-backdrop-filter: blur(20px) saturate(1.4);
   border-radius: var(--app-radius-pill);
   border: 1px solid rgba(255, 255, 255, 0.9);
-  box-shadow: 0 4px 24px rgba(26, 45, 63, 0.08), 0 1px 0 rgba(255, 255, 255, 0.95) inset;
+  box-shadow: 0 4px 24px rgba(74, 47, 122, 0.1), 0 1px 0 rgba(255, 255, 255, 0.95) inset;
 }
 
 .header__inner {
@@ -51,14 +51,30 @@
   font-weight: 600;
   font-size: 1rem;
   letter-spacing: 0.02em;
-  box-shadow: 0 8px 24px rgba(31, 77, 61, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.15) inset;
+  box-shadow: 0 8px 24px rgba(74, 47, 122, 0.32), 0 0 0 1px rgba(255, 255, 255, 0.18) inset;
 }
 
 .header__logo-text {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.2em 0.35em;
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 1.15rem;
+  font-size: clamp(0.95rem, 2.5vw, 1.15rem);
   letter-spacing: -0.01em;
+  line-height: 1.15;
+  text-align: left;
+}
+
+.header__logo-first {
+  color: var(--aura-navy);
+  white-space: nowrap;
+}
+
+.header__logo-last {
+  color: var(--aura-green-mid);
+  white-space: nowrap;
 }
 
 .header__nav {
@@ -92,7 +108,7 @@
 
 .header__link:hover {
   color: var(--aura-navy);
-  background: rgba(31, 77, 61, 0.06);
+  background: rgba(74, 47, 122, 0.08);
 }
 
 .header__link:hover::after {
@@ -109,7 +125,7 @@
 }
 
 .header__menu-btn:hover {
-  background: rgba(31, 77, 61, 0.06);
+  background: rgba(74, 47, 122, 0.08);
 }
 
 .header__menu-btn span {
@@ -120,7 +136,20 @@
   border-radius: 2px;
 }
 
-@media (max-width: 768px) {
+/* Tablet & mobile: hamburger menu */
+@media (max-width: 1023px) {
+  .header {
+    padding: clamp(0.85rem, 3vw, 1.15rem) 0;
+  }
+
+  .header__nav {
+    max-height: calc(100dvh - 5rem);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+}
+
+@media (max-width: 1023px) {
   .header--scrolled .header__inner {
     max-width: none;
     margin-inline: 0;
@@ -174,5 +203,41 @@
 
   .header__link:hover::after {
     width: 2.5rem;
+  }
+}
+
+/* Very small phones: stack name under logo mark */
+@media (max-width: 400px) {
+  .header__logo {
+    gap: 0.5rem;
+  }
+
+  .header__logo-text {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  .header__logo-mark {
+    width: 40px;
+    height: 40px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Desktop: inline nav, no hamburger */
+@media (min-width: 1024px) {
+  .header__menu-btn {
+    display: none;
+  }
+
+  .header__nav {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .header__link {
+    font-size: clamp(0.78rem, 1vw, 0.82rem);
+    padding: 0.5rem 0.85rem;
   }
 }

@@ -18,5 +18,5 @@
   transform: translateX(-50%);
   width: min(720px, 80%);
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(26, 45, 63, 0.08), transparent);
+  background: linear-gradient(90deg, transparent, rgba(74, 47, 122, 0.1), transparent);
 }

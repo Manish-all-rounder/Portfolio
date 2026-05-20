@@ -11,7 +11,7 @@
   color: var(--aura-navy);
   margin-bottom: 1.15rem;
   padding-bottom: 0.65rem;
-  border-bottom: 1px solid rgba(26, 45, 63, 0.08);
+  border-bottom: 1px solid rgba(74, 47, 122, 0.1);
 }
 
 .education__block {
@@ -33,9 +33,9 @@
   font-weight: 700;
   padding: 0.38rem 0.8rem;
   border-radius: var(--app-radius-pill);
-  background: linear-gradient(135deg, rgba(201, 162, 39, 0.2) 0%, rgba(201, 162, 39, 0.08) 100%);
-  color: #6b5a1e;
-  border: 1px solid rgba(201, 162, 39, 0.25);
+  background: linear-gradient(135deg, rgba(196, 181, 224, 0.35) 0%, rgba(221, 210, 240, 0.2) 100%);
+  color: var(--aura-green);
+  border: 1px solid rgba(184, 164, 217, 0.35);
 }
 
 .education__card h4 {
@@ -74,9 +74,9 @@
   flex-shrink: 0;
   border-radius: 14px;
   font-size: 1.35rem;
-  background: linear-gradient(145deg, rgba(201, 162, 39, 0.18) 0%, rgba(31, 77, 61, 0.1) 100%);
-  border: 1px solid rgba(201, 162, 39, 0.22);
-  box-shadow: 0 6px 20px rgba(26, 45, 63, 0.06);
+  background: linear-gradient(145deg, rgba(196, 181, 224, 0.28) 0%, rgba(74, 47, 122, 0.12) 100%);
+  border: 1px solid rgba(184, 164, 217, 0.3);
+  box-shadow: 0 6px 20px rgba(74, 47, 122, 0.08);
 }
 
 .cert__card h4 {
@@ -95,8 +95,18 @@
   font-weight: 500;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1023px) {
   .education__grid {
     grid-template-columns: 1fr;
+  }
+
+  .education__card h4 {
+    padding-right: 0;
+    padding-top: 2.5rem;
+  }
+
+  .education__score {
+    top: 1rem;
+    right: 1rem;
   }
 }

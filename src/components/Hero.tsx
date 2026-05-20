@@ -1,4 +1,4 @@
-import { profile } from '../data/resume';
+import { getNameParts, profile } from '../data/resume';
 import './Hero.css';
 
 export function Hero() {
@@ -6,9 +6,7 @@ export function Hero() {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const nameParts = profile.name.trim().split(/\s+/);
-  const firstName = nameParts[0] ?? '';
-  const restName = nameParts.slice(1).join(' ');
+  const { first, last, initials } = getNameParts(profile.name);
 
   return (
     <section id="hero" className="hero">
@@ -22,13 +20,10 @@ export function Hero() {
         <div className="hero__content">
           <p className="hero__eyebrow">Power BI Developer · Data Analyst</p>
           <h1 className="hero__title">
-            <span className="hero__title-first">{firstName}</span>
-            {restName ? (
-              <>
-                <br />
-                <span className="hero__title-accent">{restName}</span>
-              </>
-            ) : null}
+            <span className="hero__title-name">
+              <span className="hero__title-first">{first}</span>
+              {last ? <span className="hero__title-last">{last}</span> : null}
+            </span>
           </h1>
           <p className="hero__tagline">{profile.tagline}</p>
           <p className="hero__location">{profile.location}</p>
@@ -65,9 +60,10 @@ export function Hero() {
           <div className="hero__card-border" aria-hidden="true" />
           <div className="hero__avatar">
             <span className="hero__avatar-ring" aria-hidden="true" />
-            <span>AP</span>
+            <span>{initials}</span>
           </div>
-          <h2>{profile.title}</h2>
+          <p className="hero__card-name">{profile.name}</p>
+          <p className="hero__card-role">{profile.title}</p>
           <ul className="hero__contact-list">
             <li>
               <a href={`mailto:${profile.email}`}>{profile.email}</a>

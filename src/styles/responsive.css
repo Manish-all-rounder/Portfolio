@@ -1,0 +1,81 @@
+/* Shared breakpoints: mobile <640 | tablet 640–1023 | desktop 1024+ */
+
+html {
+  overflow-x: clip;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  overflow-x: clip;
+}
+
+.app {
+  overflow-x: clip;
+  width: 100%;
+}
+
+.container {
+  width: min(1140px, 100% - clamp(1.25rem, 5vw, 3rem));
+  margin-inline: auto;
+  padding-inline: clamp(0.25rem, 1vw, 0.5rem);
+}
+
+/* Touch-friendly controls on phones & tablets */
+@media (hover: none) and (pointer: coarse) {
+  .btn,
+  .header__link,
+  .header__menu-btn,
+  .header__logo {
+    min-height: 44px;
+  }
+
+  .header__link {
+    min-height: 48px;
+  }
+
+  .card:hover,
+  .project-card:hover,
+  .hero__stat:hover {
+    transform: none;
+  }
+}
+
+/* Tablet: slightly tighter sections */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .section {
+    padding: clamp(3rem, 6vw, 5rem) 0;
+  }
+
+  .section-title {
+    max-width: none;
+  }
+}
+
+/* Desktop: wider readable line for hero tagline */
+@media (min-width: 1024px) {
+  .hero__inner {
+    grid-template-columns: 1.2fr 0.8fr;
+  }
+}
+
+/* Large desktop */
+@media (min-width: 1280px) {
+  .container {
+    width: min(1200px, 100% - 4rem);
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

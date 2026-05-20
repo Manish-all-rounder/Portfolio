@@ -11,7 +11,7 @@
 .project-card {
   display: grid;
   grid-template-columns: minmax(240px, 300px) 1fr;
-  background: linear-gradient(145deg, #ffffff 0%, #fafbfd 100%);
+  background: linear-gradient(145deg, #ffffff 0%, var(--aura-cream) 100%);
   border-radius: calc(var(--app-radius) + 2px);
   border: 1px solid rgba(255, 255, 255, 0.95);
   box-shadow: var(--app-shadow);
@@ -21,11 +21,11 @@
 
 .project-card:hover {
   transform: translateY(-6px);
-  box-shadow: var(--app-shadow-lg), 0 0 0 1px rgba(201, 162, 39, 0.12);
+  box-shadow: var(--app-shadow-lg), 0 0 0 1px rgba(196, 181, 224, 0.25);
 }
 
 .project-card__visual {
-  background: linear-gradient(155deg, #1a3d32 0%, #1f4d3d 50%, #2a5545 100%);
+  background: var(--gradient-aura-dark);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -41,7 +41,7 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 80% 15%, rgba(201, 162, 39, 0.35) 0%, transparent 45%),
+    radial-gradient(circle at 80% 15%, rgba(196, 181, 224, 0.4) 0%, transparent 45%),
     radial-gradient(circle at 10% 90%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
 }
 
@@ -76,7 +76,7 @@
 
 .project-card__chart span:nth-child(2) {
   height: 78%;
-  background: linear-gradient(180deg, rgba(201, 162, 39, 0.95) 0%, rgba(201, 162, 39, 0.5) 100%);
+  background: linear-gradient(180deg, rgba(196, 181, 224, 0.95) 0%, rgba(139, 107, 184, 0.55) 100%);
 }
 
 .project-card__chart span:nth-child(3) {
@@ -149,7 +149,7 @@
   height: 6px;
   border-radius: 2px;
   background: var(--gradient-aura-primary);
-  box-shadow: 0 0 0 2px rgba(201, 162, 39, 0.2);
+  box-shadow: 0 0 0 2px rgba(196, 181, 224, 0.35);
 }
 
 .project-card__link {
@@ -157,12 +157,24 @@
   align-self: flex-start;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1023px) {
   .project-card {
     grid-template-columns: 1fr;
   }
 
   .project-card__visual {
-    min-height: 160px;
+    min-height: 140px;
+  }
+}
+
+@media (max-width: 639px) {
+  .project-card__body {
+    padding: 1.5rem;
+  }
+
+  .project-card__link {
+    display: inline-flex;
+    width: 100%;
+    justify-content: center;
   }
 }

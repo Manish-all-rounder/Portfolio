@@ -11,6 +11,18 @@ export const profile = {
     'Business Intelligence and Data Analyst with hands-on experience in Power BI dashboard development and KPI reporting. Skilled in translating business requirements into data-driven insights using DAX, Power Query, and data modeling. Experienced in end-to-end analytics projects, stakeholder collaboration, and building automated reports using Excel, SQL, and Google Sheets. Strong in data storytelling, problem-solving, and business analysis.',
 };
 
+export function getNameParts(fullName: string) {
+  const parts = fullName.trim().split(/\s+/).filter(Boolean);
+  const first = parts[0] ?? '';
+  const last = parts.slice(1).join(' ');
+  const initials = parts
+    .map((part) => part[0])
+    .join('')
+    .slice(0, 2)
+    .toUpperCase();
+  return { first, last, initials, full: fullName.trim() };
+}
+
 export const skills = {
   tools: [
     'Power BI',

@@ -33,9 +33,9 @@
   height: 56px;
   margin: 0 auto 1.1rem;
   border-radius: 16px;
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.95) 0%, rgba(238, 242, 247, 0.9) 100%);
-  border: 1px solid rgba(201, 162, 39, 0.2);
-  box-shadow: 0 8px 28px rgba(26, 45, 63, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.98) 0%, var(--aura-mist) 100%);
+  border: 1px solid rgba(196, 181, 224, 0.35);
+  box-shadow: 0 8px 28px rgba(74, 47, 122, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.85) inset;
 }
 
 .about__icon {
@@ -58,7 +58,13 @@
   line-height: 1.6;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1023px) {
+  .about__highlights {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 639px) {
   .about__highlights {
     grid-template-columns: 1fr;
   }
