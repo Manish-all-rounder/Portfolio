@@ -1,0 +1,26 @@
+.footer {
+  padding: 2.25rem 0;
+  background: linear-gradient(180deg, transparent, rgba(26, 45, 63, 0.03));
+  border-top: 1px solid rgba(26, 45, 63, 0.07);
+}
+
+.footer__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  font-size: 0.84rem;
+  color: var(--aura-slate);
+  font-weight: 500;
+}
+
+.footer__inner p:first-child {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  color: var(--aura-navy);
+}
+
+.footer__location {
+  opacity: 0.82;
+}

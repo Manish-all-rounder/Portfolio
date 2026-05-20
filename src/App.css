@@ -1,0 +1,22 @@
+.app {
+  min-height: 100vh;
+}
+
+.app main > section:nth-child(odd):not(#hero) {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.35) 0%, transparent 100%);
+}
+
+.app main > section:nth-child(even):not(#hero) {
+  position: relative;
+}
+
+.app main > section:nth-child(even):not(#hero)::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(720px, 80%);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(26, 45, 63, 0.08), transparent);
+}

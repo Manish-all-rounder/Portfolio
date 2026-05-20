@@ -1,0 +1,126 @@
+.experience .timeline__header h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2.2vw, 1.35rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1.65rem;
+  position: relative;
+}
+
+.timeline__item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.35rem;
+  align-items: start;
+}
+
+.timeline__marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 0.45rem;
+  position: relative;
+  z-index: 1;
+}
+
+.timeline__dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--aura-mist);
+  border: 2px solid rgba(90, 107, 125, 0.35);
+  flex-shrink: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline__dot--active {
+  background: linear-gradient(145deg, var(--aura-gold-soft), var(--aura-gold));
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 0 5px rgba(201, 162, 39, 0.22), 0 6px 16px rgba(201, 162, 39, 0.35);
+}
+
+.timeline__item:hover .timeline__dot {
+  transform: scale(1.08);
+}
+
+.timeline__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.1rem;
+  flex-wrap: wrap;
+}
+
+.timeline__company {
+  font-size: 0.9rem;
+  color: var(--aura-green);
+  font-weight: 600;
+}
+
+.timeline__meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.4rem;
+}
+
+.timeline__badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.32rem 0.75rem;
+  border-radius: var(--app-radius-pill);
+  background: var(--gradient-aura-primary);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 14px rgba(31, 77, 61, 0.25);
+}
+
+.timeline__location {
+  font-size: 0.8rem;
+  color: var(--aura-slate);
+  font-weight: 500;
+}
+
+.timeline__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.timeline__list li {
+  position: relative;
+  padding-left: 1.2rem;
+  font-size: 0.92rem;
+  color: var(--aura-slate);
+  line-height: 1.58;
+}
+
+.timeline__list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--aura-gold-soft), var(--aura-gold));
+  box-shadow: 0 0 0 2px rgba(201, 162, 39, 0.15);
+}
+
+@media (max-width: 640px) {
+  .timeline__item {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline__marker {
+    display: none;
+  }
+}

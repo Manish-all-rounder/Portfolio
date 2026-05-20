@@ -1,0 +1,102 @@
+.education__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.education__heading {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--aura-navy);
+  margin-bottom: 1.15rem;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid rgba(26, 45, 63, 0.08);
+}
+
+.education__block {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.education__card {
+  position: relative;
+  padding-top: 2.65rem;
+}
+
+.education__score {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.38rem 0.8rem;
+  border-radius: var(--app-radius-pill);
+  background: linear-gradient(135deg, rgba(201, 162, 39, 0.2) 0%, rgba(201, 162, 39, 0.08) 100%);
+  color: #6b5a1e;
+  border: 1px solid rgba(201, 162, 39, 0.25);
+}
+
+.education__card h4 {
+  font-family: var(--font-display);
+  font-size: 1.12rem;
+  font-weight: 600;
+  color: var(--aura-navy);
+  margin-bottom: 0.45rem;
+  padding-right: 5.5rem;
+  letter-spacing: -0.02em;
+}
+
+.education__institution {
+  font-size: 0.9rem;
+  color: var(--aura-green);
+  font-weight: 600;
+  margin-bottom: 0.28rem;
+}
+
+.education__location {
+  font-size: 0.82rem;
+  color: var(--aura-slate);
+}
+
+.cert__card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.1rem;
+}
+
+.cert__icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 14px;
+  font-size: 1.35rem;
+  background: linear-gradient(145deg, rgba(201, 162, 39, 0.18) 0%, rgba(31, 77, 61, 0.1) 100%);
+  border: 1px solid rgba(201, 162, 39, 0.22);
+  box-shadow: 0 6px 20px rgba(26, 45, 63, 0.06);
+}
+
+.cert__card h4 {
+  font-family: var(--font-display);
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: var(--aura-navy);
+  margin-bottom: 0.35rem;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+
+.cert__card p {
+  font-size: 0.82rem;
+  color: var(--aura-slate);
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .education__grid {
+    grid-template-columns: 1fr;
+  }
+}
